@@ -4,7 +4,7 @@ import { HomeList } from './content/HomeList';
 import { ArticleDetail } from './content/article_detail/ArticleDetail';
 import { HomeFooter } from './fotter/HomeFooter';
 
-import { Router, Route } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import { Layout } from 'antd';
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
@@ -17,8 +17,10 @@ export class HomeIndex extends React.Component<Props, {}> {
       <Router history={history}>
         <Layout>
           <TopHeader></TopHeader>
-          <Route path="/list" component={HomeList} />
-          <Route path="/detail" component={ArticleDetail} />
+          <Switch>
+            <Route exact path="/" component={HomeList} />
+            <Route path="/article" component={ArticleDetail} />
+          </Switch>
           <HomeFooter></HomeFooter>
         </Layout>
       </Router>

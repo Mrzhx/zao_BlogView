@@ -12,12 +12,12 @@ const navItem = [
   },
   {
     name: "文章",
-    url: "/list",
+    url: "/article",
     icon: <BookOutlined />
   },
   {
     name: "关于我们",
-    url: "/about",
+    url: "/detail",
     icon: <AppstoreOutlined />
   },
   {
