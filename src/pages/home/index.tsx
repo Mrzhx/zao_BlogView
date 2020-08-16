@@ -9,14 +9,14 @@ import { Layout } from 'antd';
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
 
-type Props = {};
+interface Props {};
 console.log(history)
 export class HomeIndex extends React.Component<Props, {}> {
   render() {
     return (
       <Router history={history}>
         <Layout>
-          <TopHeader></TopHeader>
+          <TopHeader history={history}></TopHeader>
           <Switch>
             <Route exact path="/" component={HomeList} />
             <Route path="/article" component={ArticleDetail} />

@@ -1,9 +1,7 @@
 import React from 'react'
-import { createBrowserHistory } from "history";
 import { HomeOutlined, BookOutlined, AppstoreOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 const { Header } = Layout;
-const history = createBrowserHistory();
 const navItem = [
   {
     name: "首页",
@@ -32,13 +30,15 @@ const navItem = [
   }
 ]
 
-type Props = {}
+interface Props {
+  history: any
+};
 
-export const TopHeader: React.FC<Props> = props => {
+export const TopHeader: React.FC<Props> = (props) => {
 
   const ChangeUrl = (event: any) => {
-    history.push(event.key);
-  }
+    props.history.push(event.key);
+  };
 
   return (
     <Header>
