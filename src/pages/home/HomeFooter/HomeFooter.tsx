@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './HomeFooter.css';
 import { Layout } from 'antd';
 const { Footer } = Layout;
 
@@ -6,8 +7,8 @@ type Props = {}
 
 export const HomeFooter: React.FC<Props> = props => {
   return (
-    <Footer>
-      <span>mrzhx 2020 </span>
+    <Footer className="home-bottom">
+      欢迎来到感官世界～
     </Footer>
   )
 }
