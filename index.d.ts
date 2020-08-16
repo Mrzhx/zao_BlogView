@@ -5,3 +5,5 @@ declare module '*.jpeg'
 declare module '*.gif'
 declare module '*.bmp'
 declare module '*.tiff'
+declare module 'react-router-config';
+declare module 'react-router-dom';

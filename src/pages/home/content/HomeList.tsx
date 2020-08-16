@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './HomeContent.css';
+import './HomeList.css';
 import Banner from '../../../assets/images/bg7-1.png';
 import { Layout, Row, Col, Card } from 'antd';
 const { Content } = Layout;
@@ -8,7 +8,7 @@ type Props = {
   nav: string,
 }
 
-export const HomeContent: React.FC<Props> = props => {
+export const HomeList: React.FC<Props> = props => {
   return (
     <Content>
       <div className="topBanner">

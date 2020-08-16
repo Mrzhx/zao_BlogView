@@ -1,21 +1,27 @@
 import React from 'react'
 import { TopHeader } from './header/TopHeader';
-import { HomeContent } from './content/HomeContent';
-import { HomeFooter } from './HomeFooter/HomeFooter';
+import { HomeList } from './content/HomeList';
+import { ArticleDetail } from './content/article_detail/ArticleDetail';
+import { HomeFooter } from './fotter/HomeFooter';
 
+import { Router, Route } from "react-router-dom";
 import { Layout } from 'antd';
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory();
 
 type Props = {};
-
-
+console.log(history)
 export class HomeIndex extends React.Component<Props, {}> {
   render() {
     return (
-      <Layout>
-        <TopHeader nav="mynav"></TopHeader>
-        <HomeContent nav="我的内容"></HomeContent>
-        <HomeFooter></HomeFooter>
-      </Layout>
-    ) 
+      <Router history={history}>
+        <Layout>
+          <TopHeader></TopHeader>
+          <Route path="/list" component={HomeList} />
+          <Route path="/detail" component={ArticleDetail} />
+          <HomeFooter></HomeFooter>
+        </Layout>
+      </Router>
+    )
   }
 }
