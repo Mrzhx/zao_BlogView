@@ -1,27 +1,40 @@
 .topBanner {
   width: 100%;
-  height: 40rem;
-  display: flex;
-  align-items: center;
-  padding: 5rem;
-  justify-content: center;
-  background-color: #fff;
+  height: auto;
+  position: relative;
+  background: #fff;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e8e8e8;
 }
-.topBanner > img {
-  width:50%;
-  height: 100%;
-  margin: 0 auto;
+.banner-con {
+  max-width: 1050px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 16px;
 }
 .center-main {
   margin-top: 4rem;
 }
+.article-img {
+  display: block;
+  float: none;
+  margin-left: 0;
+  width: 100%;
+  height: 0;
+  padding-top: 40%;
+  background-color: #d9d9d9;
+  background-position: 40%;
+  background-size: cover;
+  border-radius: 2px;
+  background-image: url("https://cdn.nlark.com/yuque/0/2020/png/215718/1597143339882-65886107-106a-4d48-aa1f-3bbf3326ad65.png");
+}
+
+
 
 @media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 */
   .topBanner {
-    height: 20rem;
-  }
-  .topBanner > img {
-    width: 100%;
-    height: 100%;
+    margin: 0;
+    padding: 0;
   }
 }
