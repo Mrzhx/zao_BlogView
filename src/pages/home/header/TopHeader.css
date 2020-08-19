@@ -18,10 +18,79 @@
   margin: 0 auto;
   justify-content: space-between;
 }
-@media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 */
+.nav-list {
+  width: 750px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-item {
+  flex: 1;
+  font-size: 14px;
+  margin-left: 10px;
+  text-align: center;
+}
+a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.nav-list-hor {
+  width: 100%;
+  display: flex;
+  height: auto;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  align-items: center;
+  background-color: #fff;
+  flex-direction: column;
+}
+.nav-item-hor {
+  width: 100%;
+  /* display: inline-block; */
+  height: 30px;
+  text-align: left;
+  line-height: 30px;
+  font-size: 14px;
+  padding-left: 20px;
+}
+.nav-item-hor:hover {
+  color: #2d4059;
+  background-color: #f3e6e3;
+}
+
+
+/*屏幕在480px到768之间（主要是手机屏幕）*/ 
+@media screen and (max-width: 768px) {/* 兼容iphone6 */
   .header-top {
     width: 100%;
     display: flex;
     flex-direction: column;
   }
+  .nav-list {
+    display: none;
+  }
 }
+
+/*屏幕大于1200排序（大屏幕电脑）*/ 
+@media screen and (min-width: 1200px){
+  .nav-list-hor {
+    display: none;
+  }
+}
+/*屏幕在1024px到1199之间（中屏幕电脑）*/
+@media screen and (min-width: 1024px) and (max-width: 1199px){
+  .nav-list-hor {
+    display: none;
+  }
+}
+/*屏幕在768px到1023之间（小屏幕-pad）*/ 
+@media screen and (min-width: 768px) and (max-width:1023px){
+  .nav-list-hor {
+    display: none;
+  }
+} 
