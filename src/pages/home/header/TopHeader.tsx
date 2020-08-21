@@ -21,6 +21,8 @@ class UserHeader extends React.Component<IsProps, Istate> {
     
   }
   private changeStatus() {
+    const width = document.body.clientWidth;
+    if (width > 750) return;
     const el: any = document.getElementsByClassName('nav-list-hor');
     let str = el[0].style.display;
     if (str === 'none' || str === "") {

@@ -9,23 +9,13 @@ const navItem = [
   },
   {
     id: 1,
-    name: "文章",
+    name: "热点",
     url: "/article",
   },
   {
     id: 2,
-    name: "关于我们",
+    name: "痕迹",
     url: "/detail",
-  },
-  {
-    id: 3,
-    name: "联系我们",
-    url: "/phone",
-  },
-  {
-    id: 4,
-    name: "加入我们",
-    url: "/join",
   }
 ]
 

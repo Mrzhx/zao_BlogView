@@ -7,19 +7,17 @@ import { Layout, Row, Col, Card } from 'antd';
 const { Content,  } = Layout;
 const { Meta } = Card;
 
-interface IsProps { }
-interface Istate { list: [] }
+
 
 
 /**
  * CardItems
  */
-interface Cards { child: any };
-
+interface Cards { child: any, history: any };
 const CardItems: React.FC<Cards> = (cards) => {
-  const { child } = cards;
+  const { child, history } = cards;
   return (
-    <Col xs={{ span: 24 }} lg={{ span: 7}}> 
+    <Col xs={{ span: 24 }} lg={{ span: 7}} onClick={() => history.push(`/article?id=${child.book_id}&slug=${child.slug}`)}> 
       <Card title={child.title} bordered={false}>
         <Meta title={child.updated_at}  />
         <div style={{marginTop: '10px'}}>{child.description}</div>
@@ -28,6 +26,10 @@ const CardItems: React.FC<Cards> = (cards) => {
   )
 }
 
+interface IsProps {
+  history: any
+}
+interface Istate { list: [] }
 export class HomeList extends React.Component<IsProps, Istate> {
   constructor(props: IsProps) {
     super(props)
@@ -42,6 +44,7 @@ export class HomeList extends React.Component<IsProps, Istate> {
     const nowDay: any = dayjs(str);
     return dayjs(nowDay.$d.getTime()).format('YYYY-MM-DD')
   }
+
   /**
    * getDocList
    */
@@ -63,6 +66,7 @@ export class HomeList extends React.Component<IsProps, Istate> {
   }
 
   componentDidMount() {
+    // console.log(this.props.history)
     this.getDocList();
   }
 
@@ -78,7 +82,7 @@ export class HomeList extends React.Component<IsProps, Istate> {
         <Row gutter={[0, 20]} justify="space-around" style={{maxWidth: "1050px", margin: '2rem auto'}}>
           {
             this.state.list.map((item: any) => {
-              return <CardItems key={item.slug} child={item}></CardItems>
+              return <CardItems history={this.props.history} key={item.slug} child={item}></CardItems>
             })
           }
         </Row>

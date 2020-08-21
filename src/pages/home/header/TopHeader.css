@@ -1,9 +1,11 @@
 
 .layout-header {
-  position: relative;
+  position: fixed;
   z-index: 999;
   width: 100%;
   height: 60px;
+  top: 0;
+  left: 0;
   background: #fff;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,.06);
 }
@@ -78,19 +80,19 @@ a:hover {
 
 /*屏幕大于1200排序（大屏幕电脑）*/ 
 @media screen and (min-width: 1200px){
-  .nav-list-hor {
+  .nav-list-hor, .anticon-unordered-list {
     display: none;
   }
 }
 /*屏幕在1024px到1199之间（中屏幕电脑）*/
 @media screen and (min-width: 1024px) and (max-width: 1199px){
-  .nav-list-hor {
+  .nav-list-hor,.anticon-unordered-list {
     display: none;
   }
 }
 /*屏幕在768px到1023之间（小屏幕-pad）*/ 
 @media screen and (min-width: 768px) and (max-width:1023px){
-  .nav-list-hor {
+  .nav-list-hor,.anticon-unordered-list {
     display: none;
   }
 } 

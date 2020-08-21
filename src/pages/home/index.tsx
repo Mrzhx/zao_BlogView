@@ -25,7 +25,7 @@ export class HomeIndex extends React.Component<Props, {}> {
           <TopHeader history={history}></TopHeader>
           <NavHor></NavHor>
           <Switch>
-            <Route exact path="/" component={HomeList} />
+            <Route exact path="/" his={history} component={HomeList} />
             <Route path="/article" component={ArticleDetail} />
           </Switch>
           <HomeFooter></HomeFooter>

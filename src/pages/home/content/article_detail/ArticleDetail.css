@@ -1,0 +1,9 @@
+.doc-con {
+  width: 100%;
+  background-color: #fff;
+}
+.doc-text {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 10px;
+}
