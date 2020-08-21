@@ -10,7 +10,7 @@ const navItem = [
   {
     id: 1,
     name: "热点",
-    url: "/article",
+    url: "/boiling",
   },
   {
     id: 2,

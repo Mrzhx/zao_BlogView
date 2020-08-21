@@ -35,7 +35,7 @@ class UserHeader extends React.Component<IsProps, Istate> {
     return (
       <div className="layout-header">
         <div className="nav-con">
-          <h4>前端早早聊大会</h4>
+          <h4 style={{color:'#fff'}}>前端早早聊大会</h4>
           {
             this.state.status ? <NavAdj></NavAdj>:''
           }

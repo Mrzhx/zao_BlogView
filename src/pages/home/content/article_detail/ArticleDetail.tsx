@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import './ArticleDetail.css';
+import { GetQueryString } from '../../../../utils/tools';
 import { newFetch } from '../../../../utils/http';
 import { Layout, Typography } from 'antd';
 const { Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
 
-type Props = {
-  item: any
+interface Props {
+  history: any,
+  location: any
 }
 
-const getDocInfo = async() => {
+const getDocInfo = async (search: string) => {
   try {
-    const res = await newFetch.get({ url: "user/docinfo", query: "", headers: {} });
+    const res = await newFetch.get({
+      url: "user/docinfo", query: {
+        id: GetQueryString('id'),
+        slug: GetQueryString('slug')
+      }, headers: {}
+    });
     if (res.code === 200) {
       return res.data;
     }
@@ -22,9 +29,8 @@ const getDocInfo = async() => {
 
 
 export const ArticleDetail: React.FC<Props> = props => {
-
   const [docinfo, setInfo] = useState({
-    title: "", 
+    title: "",
     description: "",
     body_lake: "",
     body_html: "",
@@ -33,29 +39,32 @@ export const ArticleDetail: React.FC<Props> = props => {
       description: ""
     }
   });
-
-
   useEffect(() => {
-    getDocInfo().then(res => {
+    console.log(props)
+    getDocInfo(props.location.search).then(res => {
       setInfo(res.data);
     })
   }, [])
-  
-  console.log(docinfo)
+
   return (
     <Content className="doc-con">
+      <div className="topBanner">
+        <div className="banner-con">
+          <div className="article-img"></div>
+        </div>
+      </div>
       <Typography className="doc-text">
         <Title>{docinfo.title}</Title>
         <Paragraph>{docinfo.description}</Paragraph>
         <pre>
-          <div dangerouslySetInnerHTML={{__html: docinfo.body_lake}}></div>
+          <div dangerouslySetInnerHTML={{ __html: docinfo.body_lake }}></div>
         </pre>
         <Paragraph>
           <Text strong>{docinfo.creator.name}@</Text>
           {docinfo.creator.description}
         </Paragraph>
         <pre>
-          <div dangerouslySetInnerHTML={{__html: docinfo.body_html}}></div>
+          <div dangerouslySetInnerHTML={{ __html: docinfo.body_html }}></div>
         </pre>
       </Typography>
     </Content>
