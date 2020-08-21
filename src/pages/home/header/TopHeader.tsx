@@ -47,7 +47,6 @@ class UserHeader extends React.Component<IsProps, Istate> {
 
 interface Props { history: any };
 export const TopHeader: React.FC<Props> = (props) => {
-  console.log(props)
   return (
     <UserHeader></UserHeader>
   )

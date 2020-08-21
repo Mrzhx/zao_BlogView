@@ -15,6 +15,7 @@
     "@types/react-router-dom": "^5.1.5",
     "antd": "^4.5.4",
     "craco-less": "^1.17.0",
+    "dayjs": "^1.8.34",
     "less": "^3.12.2",
     "qs": "^6.9.4",
     "react": "^16.13.1",
